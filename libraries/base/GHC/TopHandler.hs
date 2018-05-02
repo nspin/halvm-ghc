@@ -238,6 +238,8 @@ exitInterrupted :: IO a
 exitInterrupted =
 #ifdef mingw32_HOST_OS
   safeExit 252
+#elif HaLVM_TARGET_OS
+  safeExit (-1)
 #else
   -- we must exit via the default action for SIGINT, so that the
   -- parent of this process can take appropriate action (see #2301)
