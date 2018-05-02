@@ -327,7 +327,6 @@ Library
 
     include-dirs: include
     if os(HaLVM) {
-        include-dirs: libc-include
         cpp-options: -DHaLVM_TARGET_OS
     }
     includes:

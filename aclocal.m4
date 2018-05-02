@@ -1762,6 +1762,28 @@ AC_DEFUN([FP_CURSES],
   AC_SUBST(CURSES_LIB_DIRS)
 ])# FP_CURSES
 
+# FP_MINLIBC
+# -------------
+AC_DEFUN([FP_MINLIBC],
+[
+  dnl--------------------------------------------------------------------
+  dnl * Deal with arguments telling us where minlibc is
+  dnl--------------------------------------------------------------------
+
+  AC_ARG_WITH([minlibc-includes],
+    [AC_HELP_STRING([--with-minlibc-includes],
+      [directory containing minlibc headers])],
+      [MINLIBC_INCLUDE_DIRS=$withval])
+
+  AC_ARG_WITH([minlibc-libraries],
+    [AC_HELP_STRING([--with-minlibc-libraries],
+      [directory containing minlibc libraries])],
+      [MINLIBC_LIB_DIRS=$withval])
+
+  AC_SUBST(MINLIBC_INCLUDE_DIRS)
+  AC_SUBST(MINLIBC_LIB_DIRS)
+])# FP_MINLIBC
+
 # --------------------------------------------------------------
 # Calculate absolute path to build tree
 # --------------------------------------------------------------

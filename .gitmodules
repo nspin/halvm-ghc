@@ -123,6 +123,3 @@
 [submodule ".arc-linters/arcanist-external-json-linter"]
 	path = .arc-linters/arcanist-external-json-linter
 	url = git://git.haskell.org/arcanist-external-json-linter.git
-[submodule "rts/minlibc"]
-	path = rts/minlibc
-	url = https://github.com/GaloisInc/minlibc

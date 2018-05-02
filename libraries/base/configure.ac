@@ -104,6 +104,25 @@ AC_ARG_WITH([iconv-libraries],
 AC_SUBST(ICONV_INCLUDE_DIRS)
 AC_SUBST(ICONV_LIB_DIRS)
 
+dnl--------------------------------------------------------------------
+dnl * Deal with arguments telling us where minlibc is, if target is HaLVM
+dnl--------------------------------------------------------------------
+
+AC_ARG_WITH([minlibc-includes],
+  [AC_HELP_STRING([--with-minlibc-includes],
+    [directory containing minlibc includes])],
+    [MINLIBC_INCLUDE_DIRS=$withval; CPPFLAGS="-I$withval $CPPFLAGS"],
+    [MINLIBC_INCLUDE_DIRS=])
+
+AC_ARG_WITH([minlibc-libraries],
+  [AC_HELP_STRING([--with-minlibc-libraries],
+    [directory containing minlibc library])],
+    [MINLIBC_LIB_DIRS=$withval; LDFLAGS="-L$withval $LDFLAGS"],
+    [MINLIBC_LIB_DIRS=])
+
+AC_SUBST(MINLIBC_INCLUDE_DIRS)
+AC_SUBST(MINLIBC_LIB_DIRS)
+
 # map standard C types and ISO types to Haskell types
 FPTOOLS_CHECK_HTYPE(char)
 FPTOOLS_CHECK_HTYPE(signed char)

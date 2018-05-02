@@ -1,4 +1,4 @@
-extra-lib-dirs: @ICONV_LIB_DIRS@
+extra-lib-dirs: @ICONV_LIB_DIRS@ @MINLIBC_LIB_DIRS@
 extra-libraries: @EXTRA_LIBS@
-include-dirs: @ICONV_INCLUDE_DIRS@
+include-dirs: @ICONV_INCLUDE_DIRS@ @MINLIBC_INCLUDE_DIRS@
 install-includes: HsBaseConfig.h EventConfig.h

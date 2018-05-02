@@ -486,11 +486,6 @@ endif
 endif
 endif
 
-ifeq "$(TargetOS_CPP)" "HaLVM"
-PACKAGES_STAGE1 += HALVMCore
-PACKAGES_STAGE1 += XenDevice
-endif
-
 # See Note [No stage2 packages when CrossCompiling or Stage1Only].
 # See Note [Stage1Only vs stage=1] in mk/config.mk.in.
 ifeq "$(CrossCompiling) $(Stage1Only)" "NO NO"

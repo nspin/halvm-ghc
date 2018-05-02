@@ -96,6 +96,14 @@ ifneq "$$(CURSES_LIB_DIRS)" ""
 $1_$2_CONFIGURE_OPTS += --configure-option=--with-curses-libraries="$$(CURSES_LIB_DIRS)"
 endif
 
+ifneq "$$(MINLIBC_INCLUDE_DIRS)" ""
+$1_$2_CONFIGURE_OPTS += --configure-option=--with-minlibc-includes="$$(MINLIBC_INCLUDE_DIRS)"
+endif
+
+ifneq "$$(MINLIBC_LIB_DIRS)" ""
+$1_$2_CONFIGURE_OPTS += --configure-option=--with-minlibc-libraries="$$(MINLIBC_LIB_DIRS)"
+endif
+
 ifeq "$$(CrossCompiling)" "YES"
 $1_$2_CONFIGURE_OPTS += --configure-option=--host=$(TargetPlatformFull)
 endif
